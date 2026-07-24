@@ -1,0 +1,69 @@
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.cert-card {
+  background: radial-gradient(circle at top left, #111827, #020617 75%);
+  border-radius: 20px;
+  padding: 22px 22px 18px;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.6);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3), 0 16px 40px rgba(15, 23, 42, 0.7);
+}
+
+.cert-card h4 {
+  margin: 0 0 14px;
+  color: #f9fafb;
+  font-size: 1.05rem;
+}
+
+.cert-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cert-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #e5e7f5;
+  line-height: 1.5;
+}
+
+.cert-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.7);
+}
+
+.activity-title {
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.activity-period {
+  font-size: 0.78rem;
+  color: #7dd3fc;
+  margin: 2px 0 4px;
+}
+
+.activity-desc {
+  color: #cbd5f5;
+}
