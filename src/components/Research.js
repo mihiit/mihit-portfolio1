@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./Research.css";
 import Reveal from "./Reveal";
 
-const FILTERS = ["All", "Published", "Under Review", "Submitted", "In Progress"];
+const FILTERS = ["All", "Accepted", "Published", "Under Review"];
 
 export default function Research({ items }) {
   const [filter, setFilter] = useState("All");
@@ -39,10 +39,11 @@ export default function Research({ items }) {
               </div>
               <h4>{r.title}</h4>
               <div className="research-venue">{r.venue}</div>
+              {r.authors && <div className="research-authors">{r.authors}</div>}
               <p>{r.desc}</p>
               {r.link && (
                 <a className="research-link" href={r.link} target="_blank" rel="noreferrer">
-                  View record →
+                  View preprint →
                 </a>
               )}
             </article>

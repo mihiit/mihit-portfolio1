@@ -7,7 +7,9 @@ function Counter({ value, suffix = "" }) {
   const [count, setCount] = useState(0);
   const numericTarget = parseFloat(value);
   const isNumeric = !isNaN(numericTarget);
-  const isDecimal = isNumeric && String(value).includes(".");
+  const decimals = isNumeric && String(value).includes(".")
+    ? String(value).split(".")[1].length
+    : 0;
 
   useEffect(() => {
     const node = ref.current;
@@ -40,8 +42,8 @@ function Counter({ value, suffix = "" }) {
   }, [value]);
 
   const display = isNumeric
-    ? isDecimal
-      ? count.toFixed(1)
+    ? decimals > 0
+      ? count.toFixed(decimals)
       : Math.round(count)
     : value;
 
@@ -60,30 +62,32 @@ export default function About({ stats, education }) {
         <h2 className="section-title">About</h2>
 
         <p className="about-text">
-          I'm a final-year Computer Science student at IILM University, Greater Noida,
-          with a strong research focus on <strong>trustworthy AI</strong>,{" "}
-          <strong>federated learning</strong>, and <strong>human-centered machine learning</strong>,
-          alongside hands-on <strong>software development</strong>.
+          I'm a Computer Science undergraduate at IILM University, India, working on{" "}
+          <strong>trustworthy and secure AI</strong>. I've authored{" "}
+          <strong>9 manuscripts (5 accepted, 4 under review)</strong>, with research spanning{" "}
+          <strong>federated learning robustness</strong>, <strong>internal-state probing for LLM
+          reliability</strong>, hallucination detection, memory and evidence retrieval in AI agents,
+          and reliable decision-making under distribution shift.
         </p>
 
         <p className="about-text">
-          My research spans healthcare AI, distributed systems, and wireless communications —
-          from confirmation-loop bias in LLM health agents to backdoor defenses in federated
-          learning and energy-efficient fluid antenna arrays, with work published, submitted, or
-          under review at venues including AI4S, IEEE TCNS, and IEEE WCL.
+          I'm especially interested in developing rigorous evaluation methods and diagnostics that
+          establish when internal signals can be trusted and acted upon — particularly in
+          safety-critical AI systems. My work favours pre-specified hypotheses, leakage-controlled
+          benchmarks, and honest reporting of negative results.
         </p>
 
         <p className="about-text">
-          On the engineering side, I've interned as a <strong>Frontend Engineer at GSPANN
-          Technologies</strong>, worked on applied CS projects at <strong>SAIL</strong>, and I'm
-          currently collaborating with <strong>Texas A&amp;M University–Kingsville</strong> on the
-          robustness of temporal health prediction models.
+          I've been a <strong>Research Intern at Sharda University</strong> (ProbeGuard, accepted at
+          IEEE ICTACS) and a <strong>Research Collaborator with Texas A&amp;M University–Kingsville</strong>{" "}
+          (two AI4S papers). On the industry side, I'm building <strong>FedGuard</strong>, a
+          federated threat-detection platform, and have interned at <strong>SAIL</strong> and{" "}
+          <strong>GSPANN Technologies</strong>.
         </p>
 
         <p className="about-text">
-          Beyond academics and research, I enjoy contributing to community service initiatives
-          and believe in using technology as a tool for social impact. I'm eager to keep
-          building meaningful projects and pushing forward reliable, interpretable AI.
+          Outside research, I led the AI/ML Club at IILM University and volunteer with Friends
+          JanSewa Samiti on health and education outreach drives in Greater Noida.
         </p>
 
         {education && (

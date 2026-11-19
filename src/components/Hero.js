@@ -8,7 +8,7 @@ export default function Hero({ data }) {
     process.env.PUBLIC_URL +
     (data.socials && data.socials.resume
       ? data.socials.resume
-      : "/_mihit_nanda.pdf");
+      : "/Mihit_Nanda_CV.pdf");
 
   // Profile image path (public folder)
   const profilePath = process.env.PUBLIC_URL + "/profile.jpeg";
