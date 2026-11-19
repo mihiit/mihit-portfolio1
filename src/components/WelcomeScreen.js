@@ -44,7 +44,7 @@ export default function WelcomeScreen({ onEnter }) {
         <h1 className="welcome-title">Welcome to My World</h1>
         <p className="welcome-subtitle">
           I&apos;m <span className="welcome-name">Mihit Nanda</span>, a
-          full-stack web developer crafting sleek, interactive experiences.
+          researcher building trustworthy and secure AI.
         </p>
 
         <button className="welcome-button" onClick={handleClick}>

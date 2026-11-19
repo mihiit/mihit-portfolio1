@@ -57,3 +57,31 @@
   line-height: 1.6;
   font-size: 0.92rem;
 }
+
+.exp-details {
+  margin: 0;
+  padding-left: 18px;
+  color: #cbd5f5;
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+.exp-details li + li {
+  margin-top: 6px;
+}
+
+.exp-type {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  margin-right: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+
+.exp-body h4 a {
+  color: inherit;
+  text-decoration: underline;
+}

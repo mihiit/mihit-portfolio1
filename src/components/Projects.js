@@ -60,12 +60,16 @@ export default function Projects({ projects }) {
                 ))}
               </div>
               <div className="project-links">
-                <a href={p.link} target="_blank" rel="noreferrer">
-                  Live
-                </a>
-                <a href={p.repo} target="_blank" rel="noreferrer">
-                  Code
-                </a>
+                {p.link && (
+                  <a href={p.link} target="_blank" rel="noreferrer">
+                    Live
+                  </a>
+                )}
+                {p.repo && (
+                  <a href={p.repo} target="_blank" rel="noreferrer">
+                    Code
+                  </a>
+                )}
               </div>
             </div>
           </Reveal>
